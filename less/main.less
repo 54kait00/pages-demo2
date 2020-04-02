@@ -1,0 +1,375 @@
+@color_1: #7e7e7e;
+@color_2: #222;
+@color_3: #333;
+@color_4: #d6b161;
+@color_5: #fff;
+@color_6: #323232;
+@font_family_1: 'Source Sans Pro', sans-serif;
+@background_color_1: #595959;
+
+/* *針對所有元素設定 */
+/*設定box sizing讓實際的寬度=Padding+border*/
+/*常用*/
+/*custom class*/
+/*col-4/col.6屬於全域class(大家都可能會用到ㄉ)*/
+/*header*/
+/*content*/
+/*content的每一個div都有間隔*/
+/*div:first-child 和header不要有間隔*/
+/*如果有固定深or淺圖片 可以在html title 多設定class dark or light 
+再用CSS去設定字的color */
+/*footer*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-family: @font_family_1;
+	font-size: 15px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+}
+ul {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+img {
+	display: block;
+}
+p {
+	color: @color_1;
+	line-height: 30px;
+}
+.container {
+	display: block;
+	width: 1080px;
+	margin: 0 auto;
+	&.full-width {
+		width: 100%;
+	}
+}
+.button {
+	display: inline-block;
+	padding: 15px 30px;
+	background: #fff;
+	color: @color_2;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-top: 30px;
+}
+.button.bordered {
+	border: 1px solid #222;
+}
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.row {
+	margin: 0 -10px;
+}
+.col-4 {
+	float: left;
+	padding: 0 10px;
+	width: 33.333%;
+}
+.col-6 {
+	float: left;
+	padding: 0 10px;
+	width: 50%;
+}
+#logo {
+	float: left;
+}
+#nav {
+	float: right;
+	text-transform: uppercase;
+	line-height: 100px;
+	li {
+		float: left;
+	}
+	a {
+		padding: 0 12px;
+		color: @color_3;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.active {
+		a {
+			color: @color_4;
+		}
+	}
+}
+.boundary {
+	&:after {
+		content: "|";
+		padding: 0 12px;
+	}
+}
+#content {
+	>div {
+		padding-top: 100px;
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+	>hr {
+		margin: 0;
+		border-top: 1px solid #eee;
+	}
+	
+}
+.slider {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+.intro {
+	text-align: center;
+	margin-bottom: 100px;
+	h2 {
+		margin: 0;
+		padding-bottom: 10px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: normal;
+		color: @color_3;
+	}
+	hr {
+		width: 60px;
+		margin: 0 auto;
+		height: 2px;
+		background-color: @background_color_1;
+		border: none;
+	}
+	p {
+		color: @color_1;
+	}
+}
+.category {
+	position: relative;
+	margin-bottom: 20px;
+}
+.categories {
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.title {
+		position: absolute;
+		top: 35%;
+		right: 10%;
+		color: @color_2;
+		font-size: 24px;
+		font-weight: 300;
+		text-transform: uppercase;
+		text-align: right;
+	}
+}
+.products {
+	li {
+		float: left;
+	}
+}
+.product {
+	.info {
+		text-align: center;
+		padding: 15px 0;
+	}
+	.title {
+		margin: 0;
+		a {
+			color: @color_2;
+			font-size: 14px;
+			font-weight: normal;
+			text-decoration: none;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+	}
+	.price {
+		color: @color_1;
+		font-size: 12px;
+		line-height: 30px;
+		letter-spacing: 1px;
+	}
+}
+.thumbnail {
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.cover {
+		position: absolute;
+		background: rgba(255,255,255,0.9);
+		border: 20px solid rgba(0,0,0,0.1);
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		opacity: 0;
+		transition: all 0.3s;
+		&:hover {
+			opacity: 1;
+		}
+		a {
+			position: absolute;
+			color: @color_3;
+			text-decoration: none;
+			top: 45%;
+		}
+	}
+}
+.event {
+	padding: 150px 0;
+	background-image: url(https://picsum.photos/1920/1080);
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	.title {
+		margin: 0;
+		color: @color_5;
+		font-weight: 100;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		line-height: 1.5;
+		font-size: 70px;
+	}
+	.subtitle {
+		margin: 0;
+		color: @color_5;
+		font-weight: 100;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		line-height: 1.5;
+		font-size: 24px;
+	}
+}
+.featured {
+	padding-bottom: 100px;
+	.info {
+		margin-top: 70px;
+		text-align: center;
+		.title {
+			text-transform: uppercase;
+			color: @color_4;
+		}
+		.name {
+			text-transform: uppercase;
+			font-weight: normal;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		.price {
+			color: @color_4;
+			font-size: 26px;
+			font-weight: 100;
+		}
+		p {
+			margin: 0;
+			margin-bottom: 30px;
+			padding-top: 30px;
+		}
+	}
+	.col-6 {
+		padding: 0px 30px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.feartured {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+.outlets {
+	padding-bottom: 100px;
+}
+.outlet {
+	h3 {
+		margin: 0;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+	.info {
+		color: @color_1;
+		line-height: 30px;
+		a {
+			color: @color_1;
+			text-decoration: none;
+		}
+	}
+	.map {
+		a {
+			color: @color_4;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}
+#footer {
+	background: #f5f5f5;
+	position: relative;
+	padding: 80px 0;
+	.logo {
+		position: absolute;
+		border: 5px solid #f5f5f5;
+		padding: 20px;
+		background: #fff;
+		top: -50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.copyright {
+		float: left;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		.subtitle {
+			font-size: 12px;
+			color: @color_6;
+		}
+	}
+	.social-media {
+		float: right;
+		li {
+			float: left;
+		}
+		a {
+			display: inline-block;
+			border: 2px solid #222;
+			border-radius: 20px;
+			width: 40px;
+			height: 40px;
+			color: @color_2;
+			line-height: 40px;
+			text-align: center;
+			text-decoration: none;
+			margin: 10px;
+		}
+	}
+}
+#go-top {
+	position: fixed;
+	right: 20px;
+	bottom: 35px;
+	width: 40px;
+	height: 40px;
+	background: rgba(0,0,0,0.6);
+	color: @color_5;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+}
