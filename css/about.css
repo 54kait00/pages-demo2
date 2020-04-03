@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 15px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -105,15 +105,44 @@ p {
   margin: 0;
   border-top: 1px solid #eee;
 }
-#content .header {
+#content div.header {
   padding: 200px 0px;
+  background-image: url(https://picsum.photos/1920/1080);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
-#content .header .title {
-  margin: 0;
+#content div.header .title {
+  margin: 0px;
   float: left;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: normal;
+  font-size: 24px;
 }
-#content .header #breadcrumbs {
+#content div.header #breadcrumbs {
   float: right;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  font-size: 12px;
+}
+#content div.header #breadcrumbs li {
+  float: left;
+  text-transform: uppercase;
+  color: white;
+}
+#content div.header #breadcrumbs li:after {
+  content: "/";
+  margin: 0 5px;
+}
+#content div.header #breadcrumbs li:last-child:after {
+  content: "";
+  margin: 0;
+}
+#content div.header #breadcrumbs a {
+  color: #7e7e7e;
+  text-decoration: none;
 }
 .slider img {
   width: 100%;
