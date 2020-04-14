@@ -1,24 +1,6 @@
-@color_1: #7e7e7e;
-@color_2: #222;
-@color_3: #333;
-@color_4: #d6b161;
-@color_5: #fff;
-@color_6: #323232;
-@font_family_1: "Source Sans Pro", sans-serif;
-@background_color_1: #595959;
+@import "_about.less";
+@import "_basic.less";
 
-/* *針對所有元素設定 */
-/*設定box sizing讓實際的寬度=Padding+border*/
-/*常用*/
-/*custom class*/
-/*col-4/col.6屬於全域class(大家都可能會用到ㄉ)*/
-/*header*/
-/*content*/
-/*content的每一個div都有間隔*/
-/*div:first-child 和header不要有間隔*/
-/*如果有固定深or淺圖片 可以在html title 多設定class dark or light 
-再用CSS去設定字的color */
-/*footer*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -64,7 +46,8 @@ p {
 .button.bordered {
   border: 1px solid #222;
 }
-.clearfix {
+.clearfix,
+.row {
   &:after {
     content: "";
     display: table;
@@ -74,15 +57,28 @@ p {
 .row {
   margin: 0 -10px;
 }
-.col-4 {
+
+.col-2, .col-3, .col-4, .col-6, .col-12 {
   float: left;
   padding: 0 30px;
+}
+
+.col-2 {
+  width: 16.6666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
   width: 33.333%;
 }
 .col-6 {
-  float: left;
-  padding: 0 30px;
   width: 50%;
+}
+.col-12 {
+  width: 100%;
 }
 #logo {
   float: left;
@@ -112,9 +108,58 @@ p {
     padding: 0 12px;
   }
 }
+
+.progress-bar {
+  width: 100%;
+  background-color: #eae8e8;
+  margin-bottom: 50px;
+  > div {
+    display: inline-block;
+  }
+  .progress {
+    padding: 2px;
+    background-color: #000000;
+    color: white;
+    text-transform: uppercase;
+    line-height: 24px;
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+  .pin {
+    position: relative;
+    top: -30px;
+    left: -30px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 14px;
+    &:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-top-color: rgba(0, 0, 0, 0.6);
+      border-width: 2px;
+      margin-left: -2px;
+    }
+  }
+}
+
 #content {
   > div {
-    padding-top: 100px;
+    padding-top: 100px; 
+    &.gray-bg{
+      background:#f5f5f5;
+    }
+    &.full-padding {
+      padding: 100px 0;
+    }
     &:first-child {
       padding-top: 0;
     }
@@ -122,6 +167,13 @@ p {
   > hr {
     margin: 0;
     border-top: 1px solid #eee;
+  }
+
+  h3.title {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 0px;
+    font-size: 24px;
   }
 
   div.header {
@@ -143,28 +195,27 @@ p {
     #breadcrumbs {
       float: right;
       background: rgba(0, 0, 0, 0.5);
-	  padding: 15px;
-	  font-size: 12px;
+      padding: 15px;
+      font-size: 12px;
       li {
-		float: left;
-		text-transform: uppercase;
-		color:white;
-		&:after{
-			content: "/";
-			margin: 0 5px;
-		}
-		&:last-child {
-			&:after{
-				content: "";
-				margin: 0;
-			}
-		}
-	  }
-	  a{
-		color:@color_1;
-		text-decoration: none;
-	
-	  }
+        float: left;
+        text-transform: uppercase;
+        color: white;
+        &:after {
+          content: "/";
+          margin: 0 5px;
+        }
+        &:last-child {
+          &:after {
+            content: "";
+            margin: 0;
+          }
+        }
+      }
+      a {
+        color: @color_1;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -195,8 +246,19 @@ p {
   p {
     color: @color_1;
   }
+  &.big{
+    h2 {
+      padding: 0;
+    }
+    p{
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
 }
 .category {
+  padding: 0 10px;
   position: relative;
   margin-bottom: 20px;
 }
@@ -222,6 +284,8 @@ p {
   }
 }
 .product {
+  padding: 0 10px;
+
   .info {
     text-align: center;
     padding: 15px 0;
@@ -264,11 +328,12 @@ p {
     &:hover {
       opacity: 1;
     }
-    a {
-      position: absolute;
+    > a {
+      position: relative;
+      top: 85px;
       color: @color_3;
       text-decoration: none;
-      top: 45%;
+
     }
   }
 }
@@ -401,6 +466,83 @@ p {
       text-align: center;
       text-decoration: none;
       margin: 10px;
+    }
+  }
+}
+
+#footer.dark {
+  padding: 0;
+  background: #222222;
+
+  .info {
+    padding: 80px 0;
+
+    .title {
+      margin: 0;
+      margin-bottom: 30px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    ul.common-list {
+
+      li {
+        border-bottom: 1px solid #333;
+
+        a {
+          display: block;
+          line-height: 45px;
+          color: #A2A2A2;
+          text-decoration: none;
+          text-transform: capitalize;
+
+          &:before {
+            content: ">";
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+
+    .thumbnails {
+      li {
+        float: left;
+
+        a {
+          display: inline-block;
+          margin: 0 10px 10px 0;
+        }
+      }
+    }
+
+  }
+
+  .bottom {
+    background: #1b1b1b;
+    padding: 35px 0;
+    color: @dark-footer-color;
+
+    .copyright {
+      margin-top: 10px;
+      text-transform: capitalize;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .social-media {
+      a {
+        margin: 0;
+        margin-left: 15px;
+        border-color:@dark-footer-color;
+        color: @dark-footer-color;
+
+      }
     }
   }
 }
