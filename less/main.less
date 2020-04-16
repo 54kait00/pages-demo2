@@ -1,38 +1,48 @@
 @import "_about.less";
 @import "_basic.less";
+@import "_service.less";
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
   font-family: @font_family_1;
   font-size: 15px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
+  line-height: 1.5;
 }
+
 ul {
   margin: 0;
   padding-left: 0;
   list-style-type: none;
 }
+
 img {
   display: block;
+  width: 100%;
 }
+
 p {
   color: @color_1;
   line-height: 30px;
 }
+
 .container {
   display: block;
   width: 1080px;
   margin: 0 auto;
+
   &.full-width {
     width: 100%;
   }
 }
+
 .button {
   display: inline-block;
   padding: 15px 30px;
@@ -42,10 +52,39 @@ p {
   text-transform: uppercase;
   font-size: 14px;
   margin-top: 30px;
+  &.black{
+    background: #222222;
+    color:white;
+    letter-spacing: 1px;
+    letter-spacing: 1px;
+    transition: 0.2s linear all;
+    &:hover{
+      background: @color_4;
+
+    }
+  }
+  &.btn-small{
+    padding: 10px 20px;
+    line-height: 1.5;
+    font-size: 12px;
+  }
+  &.full-width{
+    width: 100%;
+    // service.html
+  }
+  &.bordered {
+    border: 1px solid #222;
+    &.light-border {
+      border-color: #e8e8e8;
+      // service.html
+    }
+  }
+  &.rounded{
+    border-radius: 4px;
+  }
 }
-.button.bordered {
-  border: 1px solid #222;
-}
+
+
 .clearfix,
 .row {
   &:after {
@@ -54,11 +93,30 @@ p {
     clear: both;
   }
 }
+
 .row {
   margin: 0 -10px;
+
+  &.bordered {
+    >div {
+      border: 1px solid #f2f2f2;
+      margin-left: -1px;
+      margin-bottom: -1px;
+      // border都黏在一起所以中間和下面看起來比較粗(1px+1px),設定-1px 讓border黏在一起
+    }
+  }
+
+  // service.html>services的邊在這設定 bc全域
 }
 
-.col-2, .col-3, .col-4, .col-6, .col-12 {
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-12 {
   float: left;
   padding: 0 30px;
 }
@@ -74,34 +132,54 @@ p {
 .col-4 {
   width: 33.333%;
 }
+
 .col-6 {
   width: 50%;
 }
+
+.col-5 {
+  width: 41.666666%;
+}
+
+.col-7 {
+  width: 58.333333%;
+}
+
+.col-8{
+  width: 66.6666667%;
+}
+
 .col-12 {
   width: 100%;
 }
+
 #logo {
   float: left;
 }
+
 #nav {
   float: right;
   text-transform: uppercase;
   line-height: 100px;
+
   li {
     float: left;
   }
+
   a {
     padding: 0 12px;
     color: @color_3;
     font-size: 13px;
     text-decoration: none;
   }
+
   .active {
     a {
       color: @color_4;
     }
   }
 }
+
 .boundary {
   &:after {
     content: "|";
@@ -113,9 +191,11 @@ p {
   width: 100%;
   background-color: #eae8e8;
   margin-bottom: 50px;
-  > div {
+
+  >div {
     display: inline-block;
   }
+
   .progress {
     padding: 2px;
     background-color: #000000;
@@ -135,6 +215,7 @@ p {
     color: white;
     padding: 3px 8px;
     border-radius: 14px;
+
     &:after {
       top: 100%;
       left: 50%;
@@ -151,20 +232,130 @@ p {
   }
 }
 
-#content {
-  > div {
-    padding-top: 100px; 
-    &.gray-bg{
-      background:#f5f5f5;
+.feature-brief {
+  text-align: center;
+
+  i {
+    display: block;
+    padding-bottom: 30px;
+    font-size: 36px;
+
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  &.white {
+    color: white;
+
+    i {
+      color: @color_4;
     }
+
+    p {
+      color: white;
+    }
+  }
+
+  // about.htmlㄉ是白色
+  &.black {
+    color: black;
+
+    p {
+      color: #7e7e7e;
+    }
+
+    i {
+      color: black;
+    }
+
+  }
+
+  // service.htmlㄉ是黑色;
+}
+
+.title-block{
+  margin-bottom: 30px;
+}
+// 可能常用到XD!
+.pricing{
+  .package{
+      padding: 0 15px;
+      text-align: center;
+      .box{
+          border: 1px solid #e8e8e8;
+          padding: 50px;
+      }
+      .name{
+          margin: 0;
+          margin-bottom: 30px;
+          font-weight: normal;
+          text-transform: uppercase;
+          font-size: 16px;
+          letter-spacing: 2px;
+      }
+      .value{
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 25px 0;
+        margin-bottom: 40px;
+      }
+      .price{
+        font-size: 42px;
+        .decimal{
+         font-size: 16px;
+         margin-left: -10px;
+        //  span display:inline 會和旁邊有預設的空格,所以設定ml-10
+        }
+      }
+      .duration {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      .features {
+        li {
+          margin-bottom: 15px;
+        }
+      }
+
+      &.recommended {
+        .box {
+          background-color: #222;
+          color:white;
+          .name {
+            color:@color_4;
+          }
+          .value{
+            border-color: rgba(255, 255, 255, 0.2);
+          }
+          li{
+            color:#7d7d7d;
+          }
+
+        }
+      } 
+  }
+}
+
+#content {
+  >div {
+    padding-top: 100px;
+
+    &.gray-bg {
+      background: #f5f5f5;
+    }
+
     &.full-padding {
       padding: 100px 0;
     }
+
     &:first-child {
       padding-top: 0;
     }
   }
-  > hr {
+
+  >hr {
     margin: 0;
     border-top: 1px solid #eee;
   }
@@ -174,6 +365,7 @@ p {
     font-weight: normal;
     margin-top: 0px;
     font-size: 24px;
+
   }
 
   div.header {
@@ -192,19 +384,23 @@ p {
       font-weight: normal;
       font-size: 24px;
     }
+
     #breadcrumbs {
       float: right;
       background: rgba(0, 0, 0, 0.5);
       padding: 15px;
       font-size: 12px;
+
       li {
         float: left;
         text-transform: uppercase;
         color: white;
+
         &:after {
           content: "/";
           margin: 0 5px;
         }
+
         &:last-child {
           &:after {
             content: "";
@@ -212,22 +408,57 @@ p {
           }
         }
       }
+
       a {
         color: @color_1;
         text-decoration: none;
       }
+
+      &.transparent {
+        background: transparent;
+      }
+
+      // service.html 的breadcrumbs直接在這改
     }
   }
+
+  .feature-item {
+    position: relative;
+    // 給icon對齊
+    padding-left: 80px;
+    // 往左邊推80px,留空間給icon
+    margin-bottom: 80px;
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 36px;
+    }
+    .title {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    .dsc {
+      color: @color_1;
+    }
+  }
+  // service.html的 因為taker覺ㄉ很多地方會用到 所以在main.less 
+  // 加在#content底下,因為feature.item獨立出來設定的話,>h3.ttle的字不會被改到
+  //  (#content的權重比較大,content裡的h3可以套用在很多地方,所以不會特別去動裡面的h3)
+  // 又因為feature.item只會出現在#content裡 所以可以放這 OK!!!!! :)
 }
+
 .slider {
   img {
     width: 100%;
     height: auto;
   }
 }
+
 .intro {
   text-align: center;
   margin-bottom: 100px;
+
   h2 {
     margin: 0;
     padding-bottom: 10px;
@@ -236,6 +467,7 @@ p {
     font-weight: normal;
     color: @color_3;
   }
+
   hr {
     width: 60px;
     margin: 0 auto;
@@ -243,30 +475,36 @@ p {
     background-color: @background_color_1;
     border: none;
   }
+
   p {
     color: @color_1;
   }
-  &.big{
+
+  &.big {
     h2 {
       padding: 0;
     }
-    p{
+
+    p {
       margin: 0;
       text-transform: uppercase;
     }
   }
 
 }
+
 .category {
   padding: 0 10px;
   position: relative;
   margin-bottom: 20px;
 }
+
 .categories {
   img {
     width: 100%;
     height: auto;
   }
+
   .title {
     position: absolute;
     top: 35%;
@@ -278,11 +516,13 @@ p {
     text-align: right;
   }
 }
+
 .products {
   li {
     float: left;
   }
 }
+
 .product {
   padding: 0 10px;
 
@@ -290,8 +530,10 @@ p {
     text-align: center;
     padding: 15px 0;
   }
+
   .title {
     margin: 0;
+
     a {
       color: @color_2;
       font-size: 14px;
@@ -301,6 +543,7 @@ p {
       letter-spacing: 1px;
     }
   }
+
   .price {
     color: @color_1;
     font-size: 12px;
@@ -308,12 +551,15 @@ p {
     letter-spacing: 1px;
   }
 }
+
 .thumbnail {
   position: relative;
+
   img {
     width: 100%;
     height: auto;
   }
+
   .cover {
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
@@ -325,10 +571,12 @@ p {
     text-align: center;
     opacity: 0;
     transition: all 0.3s;
+
     &:hover {
       opacity: 1;
     }
-    > a {
+
+    >a {
       position: relative;
       top: 85px;
       color: @color_3;
@@ -337,12 +585,14 @@ p {
     }
   }
 }
+
 .event {
   padding: 150px 0;
   background-image: url(https://picsum.photos/1920/1080);
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
+
   .title {
     margin: 0;
     color: @color_5;
@@ -352,6 +602,7 @@ p {
     line-height: 1.5;
     font-size: 70px;
   }
+
   .subtitle {
     margin: 0;
     color: @color_5;
@@ -362,49 +613,60 @@ p {
     font-size: 24px;
   }
 }
+
 .featured {
   padding-bottom: 100px;
+
   .info {
     margin-top: 70px;
     text-align: center;
+
     .title {
       text-transform: uppercase;
       color: @color_4;
     }
+
     .name {
       text-transform: uppercase;
       font-weight: normal;
       margin: 0;
       margin-bottom: 10px;
     }
+
     .price {
       color: @color_4;
       font-size: 26px;
       font-weight: 100;
     }
+
     p {
       margin: 0;
       margin-bottom: 30px;
       padding-top: 30px;
     }
   }
+
   .col-6 {
     padding: 0px 30px;
+
     img {
       width: 100%;
       height: auto;
     }
   }
 }
+
 .feartured {
   img {
     width: 100%;
     height: auto;
   }
 }
+
 .outlets {
   padding-bottom: 100px;
 }
+
 .outlet {
   h3 {
     margin: 0;
@@ -412,14 +674,17 @@ p {
     text-transform: uppercase;
     font-weight: normal;
   }
+
   .info {
     color: @color_1;
     line-height: 30px;
+
     a {
       color: @color_1;
       text-decoration: none;
     }
   }
+
   .map {
     a {
       color: @color_4;
@@ -428,10 +693,13 @@ p {
     }
   }
 }
+
+
 #footer {
   background: #f5f5f5;
   position: relative;
   padding: 80px 0;
+
   .logo {
     position: absolute;
     border: 5px solid #f5f5f5;
@@ -441,20 +709,25 @@ p {
     left: 50%;
     transform: translateX(-50%);
   }
+
   .copyright {
     float: left;
     text-transform: uppercase;
     letter-spacing: 2px;
+
     .subtitle {
       font-size: 12px;
       color: @color_6;
     }
   }
+
   .social-media {
     float: right;
+
     li {
       float: left;
     }
+
     a {
       display: inline-block;
       border: 2px solid #222;
@@ -539,13 +812,14 @@ p {
       a {
         margin: 0;
         margin-left: 15px;
-        border-color:@dark-footer-color;
+        border-color: @dark-footer-color;
         color: @dark-footer-color;
 
       }
     }
   }
 }
+
 #go-top {
   position: fixed;
   right: 20px;
