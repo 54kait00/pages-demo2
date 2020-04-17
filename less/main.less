@@ -1,6 +1,8 @@
 @import "_about.less";
 @import "_basic.less";
 @import "_service.less";
+@import "_contact";
+@import "_career";
 
 * {
   -webkit-box-sizing: border-box;
@@ -25,7 +27,6 @@ ul {
 
 img {
   display: block;
-  width: 100%;
 }
 
 p {
@@ -45,41 +46,49 @@ p {
 
 .button {
   display: inline-block;
+  margin-top: 30px;
   padding: 15px 30px;
   background: #fff;
+  border: none;
   color: @color_2;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
-  margin-top: 30px;
-  &.black{
+
+  &.black {
     background: #222222;
-    color:white;
+    color: white;
     letter-spacing: 1px;
     letter-spacing: 1px;
     transition: 0.2s linear all;
-    &:hover{
+
+    &:hover {
       background: @color_4;
 
     }
   }
-  &.btn-small{
+
+  &.btn-small {
     padding: 10px 20px;
     line-height: 1.5;
     font-size: 12px;
   }
-  &.full-width{
+
+  &.full-width {
     width: 100%;
     // service.html
   }
+
   &.bordered {
     border: 1px solid #222;
+
     &.light-border {
       border-color: #e8e8e8;
       // service.html
     }
   }
-  &.rounded{
+
+  &.rounded {
     border-radius: 4px;
   }
 }
@@ -145,7 +154,7 @@ p {
   width: 58.333333%;
 }
 
-.col-8{
+.col-8 {
   width: 66.6666667%;
 }
 
@@ -186,6 +195,7 @@ p {
     padding: 0 12px;
   }
 }
+
 
 .progress-bar {
   width: 100%;
@@ -275,66 +285,131 @@ p {
   // service.htmlㄉ是黑色;
 }
 
-.title-block{
+.title-block {
   margin-bottom: 30px;
 }
+
 // 可能常用到XD!
-.pricing{
-  .package{
-      padding: 0 15px;
-      text-align: center;
-      .box{
-          border: 1px solid #e8e8e8;
-          padding: 50px;
-      }
-      .name{
-          margin: 0;
-          margin-bottom: 30px;
-          font-weight: normal;
-          text-transform: uppercase;
-          font-size: 16px;
-          letter-spacing: 2px;
-      }
-      .value{
-        border-top: 1px solid #e5e5e5;
-        border-bottom: 1px solid #e5e5e5;
-        padding: 25px 0;
-        margin-bottom: 40px;
-      }
-      .price{
-        font-size: 42px;
-        .decimal{
-         font-size: 16px;
-         margin-left: -10px;
+.pricing {
+  .package {
+    padding: 0 15px;
+    text-align: center;
+
+    .box {
+      border: 1px solid #e8e8e8;
+      padding: 50px;
+    }
+
+    .name {
+      margin: 0;
+      margin-bottom: 30px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .value {
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 25px 0;
+      margin-bottom: 40px;
+    }
+
+    .price {
+      font-size: 42px;
+
+      .decimal {
+        font-size: 16px;
+        margin-left: -10px;
         //  span display:inline 會和旁邊有預設的空格,所以設定ml-10
+      }
+    }
+
+    .duration {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .features {
+      li {
+        margin-bottom: 15px;
+      }
+    }
+
+    &.recommended {
+      .box {
+        background-color: #222;
+        color: white;
+
+        .name {
+          color: @color_4;
         }
-      }
-      .duration {
-        text-transform: uppercase;
-        font-size: 12px;
-      }
-      .features {
+
+        .value {
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+
         li {
-          margin-bottom: 15px;
+          color: #7d7d7d;
         }
+
       }
+    }
+  }
+}
 
-      &.recommended {
-        .box {
-          background-color: #222;
-          color:white;
-          .name {
-            color:@color_4;
-          }
-          .value{
-            border-color: rgba(255, 255, 255, 0.2);
-          }
-          li{
-            color:#7d7d7d;
-          }
+.contact-info {
+  color: @color_1;
+  line-height: 30px;
 
-        }
-      } 
+  .address{
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: @color_1;
+    text-decoration: none;
+  }
+}
+
+.contact-form {
+  display: inline-block;
+  // form的是block,上面的p也是block,設定Margin 會發生margin collapse,所以把form調成inline-block;
+  margin-top: 50px;
+
+  .col-6,
+  .col-12 {
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
+  label {
+    display: inline-block;
+    // label原本是inline
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: @color_1;
+  }
+
+  input,
+  textarea {
+    padding: 6px 12px;
+    border: 1px solid @light-gray;
+    width: 100%;
+    // lable+input在同一行,可以把input的寬度調100%,會自己ㄑ下一行,寬度占滿一整個col-6
+    // textareaㄉ寬高也在這設定
+  }
+
+  textarea {
+    height: 95px;
+  }
+
+  button {
+    margin-top: 0;
+    padding: 10px 20px;
+    font-size: 12px;
+    opacity: .65;
   }
 }
 
@@ -428,20 +503,24 @@ p {
     padding-left: 80px;
     // 往左邊推80px,留空間給icon
     margin-bottom: 80px;
+
     .icon {
       position: absolute;
       left: 0;
       top: 0;
       font-size: 36px;
     }
+
     .title {
       margin-bottom: 20px;
       font-size: 18px;
     }
+
     .dsc {
       color: @color_1;
     }
   }
+
   // service.html的 因為taker覺ㄉ很多地方會用到 所以在main.less 
   // 加在#content底下,因為feature.item獨立出來設定的話,>h3.ttle的字不會被改到
   //  (#content的權重比較大,content裡的h3可以套用在很多地方,所以不會特別去動裡面的h3)
@@ -674,23 +753,13 @@ p {
     text-transform: uppercase;
     font-weight: normal;
   }
+}
 
-  .info {
-    color: @color_1;
-    line-height: 30px;
-
-    a {
-      color: @color_1;
-      text-decoration: none;
-    }
-  }
-
-  .map {
-    a {
-      color: @color_4;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
+.map {
+  a {
+    color: @color_4;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }
 
@@ -716,14 +785,13 @@ p {
     letter-spacing: 2px;
 
     .subtitle {
-      font-size: 12px;
+      // font-size: 12px;
       color: @color_6;
     }
   }
 
   .social-media {
-    float: right;
-
+      float: right;
     li {
       float: left;
     }
@@ -746,6 +814,33 @@ p {
 #footer.dark {
   padding: 0;
   background: #222222;
+
+  &.center {
+    padding: 40px 0;
+    text-align: center;
+
+    img {
+      display: inline-block;
+    }
+    .social-media{
+      float: none;
+      margin: 50px 0;
+      a {
+        margin: 5px;
+        color: white;
+        border-color: white;
+        border-width: 1px;
+        font-size: 20px;
+      }
+    }
+    .copyright {
+      padding-top: 40px;
+      border-top: 1px dashed;
+      float: none;
+      color: @dark-footer-color;
+      letter-spacing: 0;
+    }
+  }
 
   .info {
     padding: 80px 0;

@@ -4,20 +4,6 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  text-align: center;
-  color: white;
-}
-.about #content .feature i {
-  display: block;
-  padding-bottom: 30px;
-  color: #d6b161;
-  font-size: 36px;
-}
-.about #content .feature .title {
-  font-size: 18px;
-}
-.about #content .feature p {
-  color: white;
 }
 .about #content .team-member {
   padding: 100px 0;
@@ -161,6 +147,83 @@
   float: right;
   margin: 0;
 }
+.contact #content {
+  padding-bottom: 100px;
+}
+.contact #content .title {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.about #content .feature {
+  padding: 100px 0;
+  background-image: url(https://picsum.photos/1920/1080);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.about #content .team-member {
+  padding: 100px 0;
+}
+.about #content .member .name {
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.about #content .member .title {
+  color: #a5a5a5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+.about #content .cover h3 {
+  margin: 30px 0px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.about #content .cover p {
+  font-size: 14px;
+}
+.about #content .cover .social-media {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.about #content .cover .social-media ul {
+  display: inline-block;
+}
+.about #content .cover .social-media li {
+  float: left;
+  margin: 0 10px;
+}
+.about #content .cover .social-media a {
+  color: black;
+  text-decoration: none;
+}
+.about #content .gray-bg {
+  padding: 100px 0;
+  text-align: center;
+}
+.about #content .gray-bg .count {
+  font-size: 36px;
+}
+.about #content .gray-bg h4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #323232;
+}
+.about #content .clients {
+  padding: 100px 0;
+}
+.summary i {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
 * {
   box-sizing: border-box;
 }
@@ -179,7 +242,6 @@ ul {
 }
 img {
   display: block;
-  width: 100%;
 }
 p {
   color: #7e7e7e;
@@ -195,13 +257,14 @@ p {
 }
 .button {
   display: inline-block;
+  margin-top: 30px;
   padding: 15px 30px;
   background: #fff;
+  border: none;
   color: #222;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
-  margin-top: 30px;
 }
 .button.black {
   background: #222222;
@@ -422,6 +485,47 @@ p {
 }
 .pricing .package.recommended .box li {
   color: #7d7d7d;
+}
+.contact-info {
+  color: #7e7e7e;
+  line-height: 30px;
+}
+.contact-info .address {
+  margin-bottom: 30px;
+}
+.contact-info a {
+  color: #7e7e7e;
+  text-decoration: none;
+}
+.contact-form {
+  display: inline-block;
+  margin-top: 50px;
+}
+.contact-form .col-6,
+.contact-form .col-12 {
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+.contact-form label {
+  display: inline-block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #7e7e7e;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 6px 12px;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+}
+.contact-form textarea {
+  height: 95px;
+}
+.contact-form button {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 12px;
+  opacity: 0.65;
 }
 #content > div {
   padding-top: 100px;
@@ -684,15 +788,7 @@ p {
   text-transform: uppercase;
   font-weight: normal;
 }
-.outlet .info {
-  color: #7e7e7e;
-  line-height: 30px;
-}
-.outlet .info a {
-  color: #7e7e7e;
-  text-decoration: none;
-}
-.outlet .map a {
+.map a {
   color: #d6b161;
   text-decoration: none;
   text-transform: uppercase;
@@ -717,7 +813,6 @@ p {
   letter-spacing: 2px;
 }
 #footer .copyright .subtitle {
-  font-size: 12px;
   color: #323232;
 }
 #footer .social-media {
@@ -741,6 +836,31 @@ p {
 #footer.dark {
   padding: 0;
   background: #222222;
+}
+#footer.dark.center {
+  padding: 40px 0;
+  text-align: center;
+}
+#footer.dark.center img {
+  display: inline-block;
+}
+#footer.dark.center .social-media {
+  float: none;
+  margin: 50px 0;
+}
+#footer.dark.center .social-media a {
+  margin: 5px;
+  color: white;
+  border-color: white;
+  border-width: 1px;
+  font-size: 20px;
+}
+#footer.dark.center .copyright {
+  padding-top: 40px;
+  border-top: 1px dashed;
+  float: none;
+  color: #6F7273;
+  letter-spacing: 0;
 }
 #footer.dark .info {
   padding: 80px 0;
