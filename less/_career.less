@@ -1,98 +1,94 @@
 @import "_basic.less";
 
-.about {
+.career {
     #content {
-        .feature {
-            padding: 100px 0;
-            background-image: url(https://picsum.photos/1920/1080);
-            background-size: cover;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-
-        }
-
-        .team-member {
-            padding: 100px 0;
-        }
-
-        .member {
-            .name {
-                font-size: 14px;
-                font-weight: normal;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-            }
+        .header {
+            padding: 50px 0;
+            background-image: none;
+            background: #f5f5f5;
 
             .title {
-                color: #a5a5a5;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-size: 12px;
-            }
-        }
-
-        .cover {
-            h3 {
-                margin: 30px 0px;
-                font-weight: normal;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-size: 14px;
+                color: black;
+                font-size: 18px;
             }
 
-            p {
-                font-size: 14px;
-            }
-
-            .social-media {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-
-                ul {
-                    display: inline-block;
-                }
+            #breadcrumbs {
+                padding: 0;
+                background: transparent;
 
                 li {
-                    float: left;
-                    margin: 0 10px;
-                }
-
-                a {
+                    letter-spacing: 1px;
                     color: black;
-                    text-decoration: none;
+
+                    &:after {
+                        color: #ccc;
+                        margin: 0 10px;
+                    }
                 }
             }
         }
 
-        .gray-bg {
-            padding: 100px 0;
-            text-align: center;
+    
+        .title {
+            font-size: 24px;
+            padding-bottom: 0;
+        }
 
-            .count {
-                font-size: 36px;
-            }
-
-            h4 {
+        .intro {
+           
+            p {
                 margin: 0;
+                font-size: 14px;
                 text-transform: uppercase;
-                font-weight: normal;
-                color: #323232;
+                letter-spacing: 2px;
             }
-		}
-		
-		.clients {
-			padding: 100px 0;
-		}
+
+        }
+
+        .example {
+            .row {
+                >div {
+                    padding: 0 30px;
+                }
+                .career-box {
+                    padding: 50px 30px;
+                    border: 1px solid @light-bordered;
+                    margin-bottom: 30px;
+                    h4 {
+                        margin: 0 0 20px 0;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: normal;        
+                    }
+                    p{
+                        line-height: 1.5;
+                    }
+                    a {
+                        display: inline-block;
+                        margin-top: 30px;
+                        font-size: 12px;
+                        color:#CBCBCB;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        &:after {
+                            font-family: "fontello";
+                            content:"\f178";
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .example, .apply {
+            padding: 100px 0;
+        }
+
+        form {
+            margin-top: 0;
+            label {
+                text-transform: capitalize;
+            }
+        }
     }
-}
-
-.summary {
-	i {
-		display: block;
-		margin-bottom: 10px;
-		font-size: 36px;
-	}
-
 }

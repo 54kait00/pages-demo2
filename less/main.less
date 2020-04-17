@@ -91,6 +91,17 @@ p {
   &.rounded {
     border-radius: 4px;
   }
+  &.golden{
+    background-color: #d6b161;
+    border-color: #d6b161;
+    color: white;
+    letter-spacing: 1px;
+    transition: 1s 0s ;
+    &:hover {
+      background-color: black;
+    }
+  }
+
 }
 
 
@@ -144,7 +155,7 @@ p {
 
 .col-6 {
   width: 50%;
-}
+  }
 
 .col-5 {
   width: 41.666666%;
@@ -283,6 +294,7 @@ p {
   }
 
   // service.htmlㄉ是黑色;
+
 }
 
 .title-block {
@@ -382,6 +394,15 @@ p {
   .col-12 {
     margin-bottom: 15px;
     padding: 0 15px;
+    &.prl-30{
+      padding: 0 30px;
+    }
+  }
+
+  .col-12 {
+    &.btn-center {
+      text-align: center;
+    }
   }
 
   label {
@@ -391,14 +412,21 @@ p {
     text-transform: uppercase;
     color: @color_1;
   }
+  
+  select {
+    text-transform: capitalize;
+  }
 
   input,
-  textarea {
+  textarea,
+  select {
     padding: 6px 12px;
     border: 1px solid @light-gray;
     width: 100%;
     // lable+input在同一行,可以把input的寬度調100%,會自己ㄑ下一行,寬度占滿一整個col-6
     // textareaㄉ寬高也在這設定
+    color:#555;
+    border-radius: 4px;
   }
 
   textarea {
@@ -407,9 +435,11 @@ p {
 
   button {
     margin-top: 0;
-    padding: 10px 20px;
-    font-size: 12px;
-    opacity: .65;
+  }
+  &.mb-30 {
+    input, select, textarea {
+      margin-bottom: 30px;
+    }
   }
 }
 
